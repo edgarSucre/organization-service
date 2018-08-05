@@ -1,17 +1,32 @@
 package com.thoughtmechanix.organizationservice.models;
 
-public class Organization {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-    private String id;
-    private String name;
-    private String contactName;
-    private String contactEmail;
-    private String contactPhone;
+@Entity
+@Table(name = "organizations")
+public class Organization {
+    @Id
+    @Column(name = "id", nullable = false)
+    String id;
+
+    @Column(name = "name", nullable = false)
+    String name;
+
+    @Column(name = "contact_name", nullable = false)
+    String contactName;
+
+    @Column(name = "contact_email", nullable = false)
+    String contactEmail;
+
+    @Column(name = "contact_phone", nullable = false)
+    String contactPhone;
 
     public String getId() {
         return id;
     }
-
 
     public void setId(String id) {
         this.id = id;
